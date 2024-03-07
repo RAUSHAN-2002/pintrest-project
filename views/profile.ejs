@@ -18,57 +18,29 @@
                 
             </div>
             <div class="profile-info">
-                <h1>Raushan </h1>
+                <h1><%= user.username %> </h1>
                 <p>Creative technologist <a href="http://fiascodesign.co.uk/" target="_blank">@FiascoDesign</a>. Maker of web things. Joint owner <a href="http://mountainandco.uk/" target="_blank">@mountainandco</a>.</p>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="text" name="filecaption">
+                    <input type="file" name="file">
+                    <button type="submit">post-your-thoughts</button>
+                </form>
             </div>
           
-                <div class="col-md-6 posts">
-                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                        <div class="inner">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdhrBjbLAvn_oXb5fsNZHpy1WvRtcCi-lq-g&usqp=CAU"/>
-                            <h4>Improving UX with animation</h4>
+              
+             <div class="cards">
+                    <% user.posts.forEach(function(post){%>
+                        <div class="col-xs-12 col-lg-12 col-xl-6 tile">
+                            <div class="inner">
+                                <img src="/images/uploads/<%= post.image%>"/>
+                                <h4><%= post.imageText %></h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                        <div class="inner">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfAX6a2QDqe9f5XJWkDi99yugyVXPmFi8Vw&usqp=CAU"/>
-                            <h4>Learning how to be a yes man</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                        <div class="inner">
-                            <img src="https://imgs.search.brave.com/Hz5Ro2zs_09QFPK8M5tRJoj-Xg1BtfOe4-GjPrvyQKc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjkx/OTEwNDU1L3Bob3Rv/L3NtaWxpbmctYnVz/aW5lc3NtYW4td2l0/aC1icm93bi1iYWct/d2Fsa2luZy1pbi1j/aXR5LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz01TnBnT3FH/ZFQtNDA0YWdIb0dz/UGRQVFRRdFZUcHBm/bFpUaUtLdFVteG0w/PQ"/>
-                            <h4>Life as a designer and developer</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                        <div class="inner">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUQSr8LgLdzElpNftc0_sU9wCTfwBUkfZE0A&usqp=CAU"/>
-                            <h4>What does the future hold for UI?</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                        <div class="inner">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUQSr8LgLdzElpNftc0_sU9wCTfwBUkfZE0A&usqp=CAU"/>
-                            <h4>What does the future hold for UI?</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                        <div class="inner">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfAX6a2QDqe9f5XJWkDi99yugyVXPmFi8Vw&usqp=CAU"/>
-                            <h4>Learning how to be a yes man</h4>
-                        </div>
-                    
-                                <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                                    <div class="inner">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfAX6a2QDqe9f5XJWkDi99yugyVXPmFi8Vw&usqp=CAU"/>
-                                        <h4>Learning how to be a yes man</h4>
-                                    </div>
-                                    <div class="col-xs-12 col-lg-12 col-xl-6 tile">
-                                        <div class="inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfAX6a2QDqe9f5XJWkDi99yugyVXPmFi8Vw&usqp=CAU"/>
-                                            <h4>Learning how to be a yes man</h4>
-                                        </div>
+                   <% }) %>
+              </div>
+                
+            
+                  
                                         
         </article>
     </div>
